@@ -24,4 +24,9 @@ GTDate.prototype = {
   }
 };
 
+jQuery(function() {
+  var gtdate = new GTDate();
+  $.fn.extend({gtdate: gtdate});
+  var timerId = setInterval(function() { $('#eorzeaTime').text($.fn.gtdate.eorzeaTimeString()); }, 300);
+});
 
